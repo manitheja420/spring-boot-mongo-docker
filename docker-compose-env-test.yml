@@ -1,0 +1,22 @@
+version: "3.1"
+services:
+ springbootapp:
+  image: ymanitheja12460/spring-boot-mongo-app:$VERSION
+  depends_on:
+  - mongo
+  ports:
+   - 8080:8080
+  networks:
+   - springbootnetwork
+ mongo:
+  image: mongo
+  volumes:
+  - mongo:/data/db
+  networks:
+  - springappbridge
+volumes:
+ mongo:
+  external: true
+networks:
+ springappbridge:
+  external: true
