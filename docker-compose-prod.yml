@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+ springbootapp:
+  environment:
+  - MONGO_DB_HOSTNAME=mongo
+  - MONGO_DB_USERNAME=prod
+  - MONGO_DB_PASSWORD=prod@123
+ mongo:
+  environment:
+  - MONGO_INITDB_ROOT_USERNAME=prod
+  - MONGO_INITDB_ROOT_PASSWORD=prod@123
